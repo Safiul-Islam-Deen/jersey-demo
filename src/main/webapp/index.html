@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>Jersey Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .endpoint {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .method {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .get { background-color: #61affe; }
+        .post { background-color: #49cc90; }
+        .put { background-color: #fca130; }
+        .delete { background-color: #f93e3e; }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jersey Demo - User Profile Settings API</h1>
+    <p>Welcome to the Jersey REST API demo. This application provides endpoints for managing user profile settings.</p>
+    
+    <h2>Available Endpoints:</h2>
+    
+    <div class="endpoint">
+        <span class="method get">GET</span>
+        <code>/api/users/health</code>
+        <p>Health check endpoint</p>
+    </div>
+    
+    <div class="endpoint">
+        <span class="method get">GET</span>
+        <code>/api/users</code>
+        <p>Get all user profiles</p>
+    </div>
+    
+    <div class="endpoint">
+        <span class="method get">GET</span>
+        <code>/api/users/{userId}/profile</code>
+        <p>Get user profile by ID</p>
+    </div>
+    
+    <div class="endpoint">
+        <span class="method post">POST</span>
+        <code>/api/users/{userId}/profile</code>
+        <p>Create or replace user profile</p>
+    </div>
+    
+    <div class="endpoint">
+        <span class="method put">PUT</span>
+        <code>/api/users/{userId}/profile</code>
+        <p>Update user profile settings (partial update)</p>
+    </div>
+    
+    <div class="endpoint">
+        <span class="method delete">DELETE</span>
+        <code>/api/users/{userId}/profile</code>
+        <p>Delete user profile</p>
+    </div>
+    
+    <h3>Example Usage:</h3>
+    <p>Try accessing: <a href="api/users/1/profile">api/users/1/profile</a></p>
+</body>
+</html>
