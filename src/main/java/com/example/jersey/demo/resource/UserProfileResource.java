@@ -65,6 +65,8 @@ public class UserProfileResource {
 
     /**
      * Update specific settings
+     * Note: Boolean fields (notificationsEnabled) will be updated to the provided value.
+     * To preserve existing boolean values, use GET to retrieve current state first.
      */
     @PUT
     @Path("/{userId}/profile")
@@ -78,7 +80,7 @@ public class UserProfileResource {
                     .build();
         }
 
-        // Update only non-null fields
+        // Update only non-null fields (String fields)
         if (updates.getUsername() != null) {
             existing.setUsername(updates.getUsername());
         }
@@ -91,6 +93,7 @@ public class UserProfileResource {
         if (updates.getTheme() != null) {
             existing.setTheme(updates.getTheme());
         }
+        // Boolean fields are always updated as they cannot be null (primitive type)
         existing.setNotificationsEnabled(updates.isNotificationsEnabled());
 
         return Response.ok(existing).build();
